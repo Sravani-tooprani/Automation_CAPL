@@ -1,0 +1,53 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  int on_status, off_status;
+}
+
+void Maintest()
+{
+  testReportFileName("LED_Stauts_Check");
+  testModuleTitle("LED Validation");
+  testModuleDescription("Check LED OFF/ON Status");
+  testcase1();
+}
+
+testcase testcase1()
+{
+  light_on();
+  testWaitForTimeout(3000);
+  light_off();
+}
+
+testfunction light_on()
+{
+  @LED::Sys_BCM=0x1;
+  testWaitForTimeout(50);
+  on_status = @LED::Sys_IPC;
+  if(on_status == 0x1)
+  {
+    testStepPass();
+  }
+  else
+    testStepFail();
+}
+
+testfunction light_off()
+{
+  @LED::Sys_BCM=0x0;
+  testWaitForTimeout(50);
+  on_status = @LED::Sys_IPC;
+  if(on_status == 0x0)
+  {
+    testStepPass();
+  }
+  else
+    testStepFail();
+}
+  
+  

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<testmodule starttime="2025-02-22 09:49:29" timestamp="   4.840000" verdicts="2_basic">
+  <violation timestamp="   4.840000" type="warning" result="warn">This is only a DEMO variant of CANoe!</violation>
+  <testcase starttime="2025-02-22 09:49:29" timestamp="   4.840000">
+    <violation timestamp="   4.840000" type="warning" result="warn">This is only a DEMO variant of CANoe!</violation>
+    <testpattern timestamp="   4.840000" name="light_on" type="testpattern">
+      <title>light_on</title>
+      <teststep timestamp="   4.890000" level="1" type="auto" ident="Resume reason" result="na">Elapsed time=50ms (max=50ms)</teststep>
+      <teststep timestamp="   4.890000" type="user" ident="" result="pass"></teststep>
+      <result timestamp="   4.890000" result="pass"/>
+    </testpattern>
+    <teststep timestamp="   7.890000" level="1" type="auto" ident="Resume reason" result="na">Elapsed time=3000ms (max=3000ms)</teststep>
+    <testpattern timestamp="   7.890000" name="light_off" type="testpattern">
+      <title>light_off</title>
+      <teststep timestamp="   7.940000" level="1" type="auto" ident="Resume reason" result="na">Elapsed time=50ms (max=50ms)</teststep>
+      <teststep timestamp="   7.940000" type="user" ident="" result="pass"></teststep>
+      <result timestamp="   7.940000" result="pass"/>
+    </testpattern>
+    <verdict time="2025-02-22 09:49:33" timestamp="   7.940000" endtime="2025-02-22 09:49:33" endtimestamp="   7.940000" result="pass" />
+    <title>testcase1</title>
+  </testcase>
+  <verdict time="2025-02-22 09:49:33" timestamp="   7.940000" endtime="2025-02-22 09:49:33" endtimestamp="   7.940000" result="pass" />
+  <title>LED Validation</title>
+  <description>Check LED OFF/ON Status</description>
+  <testlogfiles>
+  </testlogfiles>
+  <engineer>
+    <xinfo>
+      <name>Windows Login Name</name>
+      <description>srava</description>
+    </xinfo>
+  </engineer>
+  <testsetup>
+    <xinfo>
+      <name>Version</name>
+      <description>CANoe.ISO11783.J1939.CANaero.CANopen.LIN.MOST.FlexRay.J1587.Ethernet.AFDX.A429.Scope.SmartCharging 11.0.96 (SP4)</description>
+    </xinfo>
+    <xinfo>
+      <name>Configuration</name>
+      <description>C:\Users\srava\Desktop\LED_Indicator_Automation\Configuration.cfg</description>
+    </xinfo>
+    <xinfo>
+      <name>Database Config_Dbc on CAN</name>
+      <description>C:\Users\srava\Desktop\LED_Indicator_Automation\Config_Dbc.dbc (2025-02-13 11:46:51)</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module Name</name>
+      <description>LED_Automation</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module File</name>
+      <description>C:\Users\srava\Desktop\LED_Indicator_Automation\LED_Automation.can</description>
+    </xinfo>
+    <xinfo>
+      <name>Last modification of Test Module File</name>
+      <description>2025-02-22, 09:48:26</description>
+    </xinfo>
+    <xinfo>
+      <name>Windows Computer Name</name>
+      <description>LAPTOP-TKB2SCD4</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module J1939TestServiceLibraryNL</name>
+      <description>J1939 Test Service Library for CANoe, Version 11.0.96.0, c:\Program Files\Vector CANoe 11.0\Exec32\J1939TestServiceLibraryNL.dll</description>
+    </xinfo>
+  </testsetup>
+</testmodule>
+<!--footprint="3e6495afef9345ce2cdac7cf36ed26e8" version="1"-->
