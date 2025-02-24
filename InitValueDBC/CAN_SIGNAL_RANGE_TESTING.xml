@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<testmodule starttime="2025-02-22 14:19:09" timestamp="  21.890000" verdicts="2_basic">
+  <violation timestamp="  21.890000" type="warning" result="warn">This is only a DEMO variant of CANoe!</violation>
+  <testgroup>
+    <testcase starttime="2025-02-22 14:19:09" timestamp="  21.890000">
+      <violation timestamp="  21.890000" type="warning" result="warn">This is only a DEMO variant of CANoe!</violation>
+      <teststep timestamp="  24.890000" level="1" type="auto" ident="Resume reason" result="na">Elapsed time=3000ms (max=3000ms)</teststep>
+      <teststep timestamp="  24.890000" level="0" type="user" ident="TC1" result="pass">ACC_Signal: Signal value is in range. \n Received response is 00 00 00 00 00 00 00 00</teststep>
+      <teststep timestamp="  24.890000" level="0" type="user" ident="TC1" result="pass">AEB_Signal: Signal value is in range. \n Received response is 00 00 00 00 00 00 00 00</teststep>
+      <teststep timestamp="  24.890000" level="0" type="user" ident="TC1" result="pass">AWS_Signal: Signal value is in range. \n Received response is 00 00 00 00 00 00 00 00</teststep>
+      <verdict time="2025-02-22 14:19:12" timestamp="  24.890000" endtime="2025-02-22 14:19:12" endtimestamp="  24.890000" result="pass" />
+      <title>Check Signal is in range, Signal Name: AWS_SIGNAL</title>
+      <ident>TC1</ident>
+    </testcase>
+    <testcase starttime="2025-02-22 14:19:12" timestamp="  24.890000">
+      <violation timestamp="  24.890000" type="warning" result="warn">This is only a DEMO variant of CANoe!</violation>
+      <teststep timestamp="  27.890000" level="1" type="auto" ident="Resume reason" result="na">Elapsed time=3000ms (max=3000ms)</teststep>
+      <teststep timestamp="  27.890000" level="0" type="user" ident="TC2" result="pass">LKS_Signal1: Signal value is in range. \n Received response is 00 00 00 00 00 00 00 00</teststep>
+      <teststep timestamp="  27.890000" level="0" type="user" ident="TC2" result="pass">LKS_Signal2: Signal value is in range. \n Received response is 00 00 00 00 00 00 00 00</teststep>
+      <teststep timestamp="  27.890000" level="0" type="user" ident="TC2" result="pass">LKS_Signal3: Signal value is in range. \n Received response is 00 00 00 00 00 00 00 00</teststep>
+      <verdict time="2025-02-22 14:19:15" timestamp="  27.890000" endtime="2025-02-22 14:19:15" endtimestamp="  27.890000" result="pass" />
+      <title>Check Signal is in range, Signal Name: LKS_Signal3</title>
+      <ident>TC2</ident>
+    </testcase>
+    <title>RADAR Signals value range Testing</title>
+    <description>Check Signals Within Range</description>
+  </testgroup>
+  <verdict time="2025-02-22 14:19:15" timestamp="  27.890000" endtime="2025-02-22 14:19:15" endtimestamp="  27.890000" result="pass" />
+  <title>check signal is in range between Min &amp; Max Value</title>
+  <testlogfiles>
+  </testlogfiles>
+  <engineer>
+    <xinfo>
+      <name>Windows Login Name</name>
+      <description>srava</description>
+    </xinfo>
+  </engineer>
+  <testsetup>
+    <xinfo>
+      <name>Version</name>
+      <description>CANoe.ISO11783.J1939.CANaero.CANopen.LIN.MOST.FlexRay.J1587.Ethernet.AFDX.A429.Scope.SmartCharging 11.0.96 (SP4)</description>
+    </xinfo>
+    <xinfo>
+      <name>Configuration</name>
+      <description>C:\Users\srava\Desktop\InitValueDBC\Init_Values.cfg</description>
+    </xinfo>
+    <xinfo>
+      <name>Database Initial on CAN</name>
+      <description>C:\Users\srava\Desktop\InitValueDBC\Initial.dbc (2025-02-22 12:33:34)</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module Name</name>
+      <description>MinMax</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module File</name>
+      <description>C:\Users\srava\Desktop\InitValueDBC\RADAR_Signal_MinMax_Value_Check.can</description>
+    </xinfo>
+    <xinfo>
+      <name>Last modification of Test Module File</name>
+      <description>2025-02-22, 14:18:32</description>
+    </xinfo>
+    <xinfo>
+      <name>Windows Computer Name</name>
+      <description>LAPTOP-TKB2SCD4</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module J1939TestServiceLibraryNL</name>
+      <description>J1939 Test Service Library for CANoe, Version 11.0.96.0, C:\Program Files\Vector CANoe 11.0\Exec32\J1939TestServiceLibraryNL.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module CANOEILNLVECTOR</name>
+      <description>CANoe Interaction Layer NL (Vector) Version 3.17.64 (Sep 20 2018 17:36:23) , C:\Program Files\Vector CANoe 11.0\Exec32\CANOEILNLVECTOR.DLL</description>
+    </xinfo>
+  </testsetup>
+</testmodule>
+<!--footprint="cf37c53659afd52bc121c1d0133a22cd" version="1"-->

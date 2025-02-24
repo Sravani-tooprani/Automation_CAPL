@@ -1,0 +1,132 @@
+/*@!Encoding:1252*/
+variables
+{
+dword gCycCheckId_ACC,gCycCheckId_AEB,gCycCheckId_AWS,gCycCheckId_LKS1,gCycCheckId_LKS2,gCycCheckId_LKS3;
+  
+byte RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7;
+
+}
+
+on message RADAR_ACC_MSG1
+{
+RADAR_ACC_MSG_byte_0 = this.byte(0);
+RADAR_ACC_MSG_byte_1 = this.byte(1);
+RADAR_ACC_MSG_byte_2 = this.byte(2);
+RADAR_ACC_MSG_byte_3 = this.byte(3);
+RADAR_ACC_MSG_byte_4 = this.byte(4);
+RADAR_ACC_MSG_byte_5 = this.byte(5);
+RADAR_ACC_MSG_byte_6 = this.byte(6);
+RADAR_ACC_MSG_byte_7 = this.byte(7);
+  
+
+}
+
+void MainTest()
+{
+Testreportfilename("CAN_SIGNAL_RANGE_TESTING");
+TestModuleTitle("check signal is in range between Min & Max Value");
+TestGroupbegin("RADAR Signals value range Testing", "Check Signals Within Range");
+
+TC1_RADAR_ACC_MSG1_fn();
+TC2_RADAR_ACC_MSG2_fn();
+}
+
+testcase TC1_RADAR_ACC_MSG1_fn ()
+{
+
+// check for signal min and max values
+Testcasetitle("TC1", "Check Signal is in range, Signal Name: ACC_SIGNAL");
+gCycCheckId_ACC = chkstart_MsgSignalvaluerangeviolation(ACC_Signal, 0,3);
+
+Testcasetitle("TC1", "Check Signal is in range, Signal Name: AEB_SIGNAL");
+gCycCheckId_AEB = chkstart_MsgSignalvaluerangeviolation(AEB_Signal, 0,15);
+  
+Testcasetitle("TC1", "Check Signal is in range, Signal Name: AWS_SIGNAL");
+gCycCheckId_AWS = chkstart_MsgSignalvaluerangeviolation(AWS_Signal, 0,1);
+
+testwaitfortimeout(3000);
+
+//check range for ACC_Signal
+if(ChkQuery_NumEvents(gCycCheckId_ACC) >0)
+{
+teststepfail("TC1", "ACC_Signal: Signal value out of range. \n Received response is %02X %02X %02X %02X %02X %02X %02X %02X", RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7);
+}
+else 
+
+{
+teststeppass("TC1", "ACC_Signal: Signal value is in range. \n Received response is %02X %02X %02X %02X %02X %02X %02X %02X", RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7);
+}
+
+//check range for AEB_Signal
+if(ChkQuery_NumEvents(gCycCheckId_AEB) >0)
+{
+teststepfail("TC1", "AEB_Signal: Signal value out of range. \n Received response is %02X %02X %02X %02X %02X %02X %02X %02X", RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7);
+}
+else 
+
+{
+teststeppass("TC1", "AEB_Signal: Signal value is in range. \n Received response is %02X %02X %02X %02X %02X %02X %02X %02X", RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7);
+}
+
+//check range for AWS_Signal
+if(ChkQuery_NumEvents(gCycCheckId_AWS) >0)
+{
+teststepfail("TC1", "AWS_Signal: Signal value out of range. \n Received response is %02X %02X %02X %02X %02X %02X %02X %02X", RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7);
+}
+else 
+
+{
+teststeppass("TC1", "AWS_Signal: Signal value is in range. \n Received response is %02X %02X %02X %02X %02X %02X %02X %02X", RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7);
+}
+
+}
+
+
+testcase TC2_RADAR_ACC_MSG2_fn ()
+{
+//check for signal min and max values
+Testcasetitle("TC2", "Check Signal is in range, Signal Name: LKS_Signal1");
+gCycCheckId_LKS1 = chkstart_MsgSignalvaluerangeviolation(LKS_Signal1, 0,255);
+
+Testcasetitle("TC2", "Check Signal is in range, Signal Name: LKS_Signal2");
+gCycCheckId_LKS2 = chkstart_MsgSignalvaluerangeviolation(LKS_Signal2, 0,255);
+  
+Testcasetitle("TC2", "Check Signal is in range, Signal Name: LKS_Signal3");
+gCycCheckId_LKS3 = chkstart_MsgSignalvaluerangeviolation(LKS_Signal3, 0,255);
+
+testwaitfortimeout(3000);
+  
+//check range for LKS_Signal1
+if(ChkQuery_NumEvents(gCycCheckId_LKS1) >0)
+{
+teststepfail("TC2", "LKS_Signal1: Signal value out of range. \n Received response is %02X %02X %02X %02X %02X %02X %02X %02X", RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7);
+}
+else 
+
+{
+teststeppass("TC2", "LKS_Signal1: Signal value is in range. \n Received response is %02X %02X %02X %02X %02X %02X %02X %02X", RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7);
+}
+
+//check range for LKS_Signal2
+if(ChkQuery_NumEvents(gCycCheckId_LKS2) >0)
+{
+teststepfail("TC2", "LKS_Signal2: Signal value out of range. \n Received response is %02X %02X %02X %02X %02X %02X %02X %02X", RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7);
+}
+else 
+
+{
+teststeppass("TC2", "LKS_Signal2: Signal value is in range. \n Received response is %02X %02X %02X %02X %02X %02X %02X %02X", RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7);
+}
+
+//check range for LKS_Signal3
+if(ChkQuery_NumEvents(gCycCheckId_LKS3) >0)
+{
+teststepfail("TC2", "LKS_Signal3: Signal value out of range. \n Received response is %02X %02X %02X %02X %02X %02X %02X %02X", RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7);
+}
+else 
+
+{
+teststeppass("TC2", "LKS_Signal3: Signal value is in range. \n Received response is %02X %02X %02X %02X %02X %02X %02X %02X", RADAR_ACC_MSG_byte_0,RADAR_ACC_MSG_byte_1,RADAR_ACC_MSG_byte_2,RADAR_ACC_MSG_byte_3,RADAR_ACC_MSG_byte_4,RADAR_ACC_MSG_byte_5,RADAR_ACC_MSG_byte_6,RADAR_ACC_MSG_byte_7);
+}
+
+}

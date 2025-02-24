@@ -1,0 +1,120 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  int msgwaittime = 1000;
+}
+
+
+void MainTest()
+{
+  TestReportFileName("Radar Signal Init value check");
+  testModuleTitle("Radar Tx Init value check");
+  testModuleDescription("Check if all Radar signal intial values are properly getting updated ");
+  TC1_RADAR_ACC_MSG1();
+  TC2_RADAR_ACC_MSG2();
+}
+
+testcase TC1_RADAR_ACC_MSG1()
+{
+  long initvalue = 0;
+  long initvalue_3 = 3;
+  long initvalue_10 = 10;
+  
+  long ACC_Msg1, retval1, retval2, retval3;
+  
+  testCaseTitle("TC1", "Check RADAR_ACC_MSG1 assosiated signal initial values are updated as expected or not");
+  
+   ACC_Msg1  = testWaitForMessage(RADAR_ACC_MSG1, msgwaittime);
+  testWaitForTimeout(3000);
+  
+  //msg came on to CAN
+  if(ACC_Msg1 == 1)
+  {
+    retval1 = checkSignalMatch(ACC_Signal, initvalue_3);
+    retval2 = checkSignalMatch(AEB_Signal, 10);
+    retval3 = checkSignalMatch(AWS_Signal, initvalue);
+    
+    if(retval1 == 1)
+    {
+      testStepPass("TC1: ACC_Signal Initial value has been recieved as expected");
+    }
+    else
+    {
+      testStepFail("TC1: ACC_Signal Initial value hasn't been recieved as expected");
+    }
+    
+    if(retval2 == 1)
+    {
+      testStepPass("TC1: AEB_Signal Initial value has been recieved as expected");
+    }
+    else
+    {
+      testStepFail("TC1: AEB_Signal Initial value hasn't been recieved as expected");
+    }
+    
+    if(retval3 == 1)
+    {
+      testStepPass("TC1: AWS_Signal Initial value has been recieved as expected");
+    }
+    else
+    {
+      testStepFail("TC1: AWS_Signal Initial value hasn't been recieved as expected");
+    }
+  }
+}
+    
+    
+ testcase TC2_RADAR_ACC_MSG2()
+{
+  
+  
+  long ACC_Msg2, retval1, retval2, retval3;
+  
+  testCaseTitle("TC1", "Check RADAR_ACC_MSG2 assosiated signal initial values are updated as expected or not");
+  
+   ACC_Msg2  = testWaitForMessage(RADAR_ACC_MSG2, msgwaittime);
+  testWaitForTimeout(3000);
+  
+  if(ACC_Msg2 == 1)
+  {
+    retval1 = checkSignalMatch(LKS_Signal1, 0 );
+    retval2 = checkSignalMatch(LKS_Signal2, 20);
+    retval3 = checkSignalMatch(LKS_Signal3, 0);
+    
+    if(retval1 == 1)
+    {
+      testStepPass("TC2: LKS_Signal1 Initial value has been recieved as expected");
+    }
+    else
+    {
+      testStepFail("TC2: LKS_Signal1 Initial value hasn't been recieved as expected");
+    }
+    
+    if(retval2 == 1)
+    {
+      testStepPass("TC2: LKS_Signal2 Initial value has been recieved as expected");
+    }
+    else
+    {
+      testStepFail("TC1: LKS_Signal2 Initial value hasn't been recieved as expected");
+    }
+    
+    if(retval3 == 1)
+    {
+      testStepPass("TC1: LKS_Signal3 Initial value has been recieved as expected");
+    }
+    else
+    {
+      testStepFail("TC1: LKS_Signal3 Initial value hasn't been recieved as expected");
+    }
+  }
+}
+  
+  
+    
+ 

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<testmodule starttime="2025-02-22 11:27:41" timestamp="   2.860000" verdicts="2_basic">
+  <violation timestamp="   2.860000" type="warning" result="warn">This is only a DEMO variant of CANoe!</violation>
+  <testcase starttime="2025-02-22 11:27:41" timestamp="   2.860000">
+    <violation timestamp="   2.860000" type="warning" result="warn">This is only a DEMO variant of CANoe!</violation>
+    <teststep timestamp="   2.900242" level="1" type="auto" ident="Resume reason" result="na">Resumed on message id=810 (0x32A) Elapsed time=40.242ms (max=1000ms)</teststep>
+    <teststep timestamp="   5.900242" level="1" type="auto" ident="Resume reason" result="na">Elapsed time=3000ms (max=3000ms)</teststep>
+    <teststep timestamp="   5.900242" type="user" ident="" result="pass">TC1: ACC_Signal Initial value has been recieved as expected</teststep>
+    <teststep timestamp="   5.900242" type="user" ident="" result="pass">TC1: AEB_Signal Initial value has been recieved as expected</teststep>
+    <teststep timestamp="   5.900242" type="user" ident="" result="pass">TC1: AWS_Signal Initial value has been recieved as expected</teststep>
+    <verdict time="2025-02-22 11:27:45" timestamp="   5.900242" endtime="2025-02-22 11:27:45" endtimestamp="   5.900242" result="pass" />
+    <title>Check RADAR_ACC_MSG1 assosiated signal initial values are updated as expected or not</title>
+    <ident>TC1</ident>
+  </testcase>
+  <testcase starttime="2025-02-22 11:27:45" timestamp="   5.900242">
+    <violation timestamp="   5.900242" type="warning" result="warn">This is only a DEMO variant of CANoe!</violation>
+    <teststep timestamp="   5.900488" level="1" type="auto" ident="Resume reason" result="na">Resumed on message id=811 (0x32B) Elapsed time=0.246ms (max=1000ms)</teststep>
+    <teststep timestamp="   8.900488" level="1" type="auto" ident="Resume reason" result="na">Elapsed time=3000ms (max=3000ms)</teststep>
+    <teststep timestamp="   8.900488" type="user" ident="" result="pass">TC2: LKS_Signal1 Initial value has been recieved as expected</teststep>
+    <teststep timestamp="   8.900488" type="user" ident="" result="pass">TC2: LKS_Signal2 Initial value has been recieved as expected</teststep>
+    <teststep timestamp="   8.900488" type="user" ident="" result="pass">TC1: LKS_Signal3 Initial value has been recieved as expected</teststep>
+    <verdict time="2025-02-22 11:27:48" timestamp="   8.900488" endtime="2025-02-22 11:27:48" endtimestamp="   8.900488" result="pass" />
+    <title>Check RADAR_ACC_MSG2 assosiated signal initial values are updated as expected or not</title>
+    <ident>TC1</ident>
+  </testcase>
+  <verdict time="2025-02-22 11:27:48" timestamp="   8.900488" endtime="2025-02-22 11:27:48" endtimestamp="   8.900488" result="pass" />
+  <title>Radar Tx Init value check</title>
+  <description>Check if all Radar signal intial values are properly getting updated </description>
+  <testlogfiles>
+  </testlogfiles>
+  <engineer>
+    <xinfo>
+      <name>Windows Login Name</name>
+      <description>srava</description>
+    </xinfo>
+  </engineer>
+  <testsetup>
+    <xinfo>
+      <name>Version</name>
+      <description>CANoe.ISO11783.J1939.CANaero.CANopen.LIN.MOST.FlexRay.J1587.Ethernet.AFDX.A429.Scope.SmartCharging 11.0.96 (SP4)</description>
+    </xinfo>
+    <xinfo>
+      <name>Configuration</name>
+      <description>C:\Users\srava\Desktop\InitValueDBC\Init_Values.cfg</description>
+    </xinfo>
+    <xinfo>
+      <name>Database Initial on CAN</name>
+      <description>C:\Users\srava\Desktop\InitValueDBC\Initial.dbc (2025-02-22 11:26:39)</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module Name</name>
+      <description>Initvalue_check</description>
+    </xinfo>
+    <xinfo>
+      <name>Test Module File</name>
+      <description>C:\Users\srava\Desktop\InitValueDBC\RADAR_Signal_init_Value_Check.can</description>
+    </xinfo>
+    <xinfo>
+      <name>Last modification of Test Module File</name>
+      <description>2025-02-22, 11:26:15</description>
+    </xinfo>
+    <xinfo>
+      <name>Windows Computer Name</name>
+      <description>LAPTOP-TKB2SCD4</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module J1939TestServiceLibraryNL</name>
+      <description>J1939 Test Service Library for CANoe, Version 11.0.96.0, C:\Program Files\Vector CANoe 11.0\Exec32\J1939TestServiceLibraryNL.dll</description>
+    </xinfo>
+    <xinfo>
+      <name>Nodelayer Module CANOEILNLVECTOR</name>
+      <description>CANoe Interaction Layer NL (Vector) Version 3.17.64 (Sep 20 2018 17:36:23) , C:\Program Files\Vector CANoe 11.0\Exec32\CANOEILNLVECTOR.DLL</description>
+    </xinfo>
+  </testsetup>
+</testmodule>
+<!--footprint="94db9352c206f5b173a1eeefe4112910" version="1"-->
